@@ -1,4 +1,4 @@
-name: Lint and unit test code
+name: Linting code and make sure the code build successfully before deployments
 
 on: push
 
