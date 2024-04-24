@@ -1,9 +1,9 @@
-name: Linting code and make sure the code build successfully before deployments
+name: Deploy to Azure
 
 on: push
 
 jobs:
-  build:
+  lint-and-test:
       runs-on: ubuntu-latest
 
       steps:
@@ -21,3 +21,13 @@ jobs:
         - name: Unit testing using pytest
           run: |
               make test
+  deploy:
+    needs: lint-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Trigger Azure Pipeline to deploy the app"
+        uses: Azure/pipelines@releases/v1
+        with:
+          azure-devops-project-url: 'https://dev.azure.com/binhtruongvu97/udacity-devops'
+          azure-pipeline-name: 'remichan97.udacity-devops-cicd'
+          azure-devops-token: '${{ secrets.AZURE_DEVOPS_TOKEN }}'
