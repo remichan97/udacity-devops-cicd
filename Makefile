@@ -16,4 +16,4 @@ lint:
 	#hadolint Dockerfile #uncomment to explore linting Dockerfiles
 	.venv/bin/pylint --disable=R,C,W1203,bare-except --fail-under=6 app.py
 
-all: setup install lint test
+all: install lint test
