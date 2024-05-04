@@ -20,9 +20,8 @@ function is_running_in_cloud_shell {
 function install_azure_cli {
 	IS_INSTALLED=$(dpkg -s azure-cli | grep 'install ok install')
 	if [ "" = "$IS_INSTALLED" ]; then
-		echo "azure-cli is not found. Installing azure-cli"
 		echo "For this, we need elevated permissions to install packages. Please type your password on the sudo prompt below"
-		sudo apt update && sudo apt install curl -y && sudo apt install python3.11
+		sudo apt update && sudo apt install curl -y && sudo apt install python3.11 -y
 		# the one-line installation command acquired from the Microsoft official documentation
 		#h ttps://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
 		curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
