@@ -9,7 +9,7 @@ You can see the Trello board of this project here: [Trello](https://trello.com/b
 
 There is also an Excel file containing project plans on the root of the project (see the ``Project Planning.xlsx`` file for project plans)
 
-You can see a demo of the project here: [Demo video]()
+You can see a demo of the project here: [Demo video](https://youtu.be/7Gu9Fi3HhoI)
 
 ## Environment
 Python 3.11  
