@@ -7,7 +7,7 @@ In this project, you will build a Github repository from scratch and create a sc
 
 You can see the Trello board of this project here: [Trello](https://trello.com/b/GfxFaGfN/udacity-project-2-board)  
 
-There is also an Excel file containing project plans on the root of the project  
+There is also an Excel file containing project plans on the root of the project (see the ``Project Planning.xlsx`` file for project plans)
 
 You can see a demo of the project here: [Demo video]()
 
@@ -66,11 +66,13 @@ Go to the Azure portal in your web browser:
 This will open a new tab, asking you to sign in, proceed with the prompt to finish the sign in. After which, you'll be dropped to a prompt like so:  
 ![Dropped into Azure Cloud Shell](./img/azure-cloud-shell.png)  
   
-Fork this repo to your account, then clone your newly created fork on the Cloud Shell:  
+Fork this repo to your account, then clone your newly created fork on the Cloud Shell, you may have to generate an SSH key beforehand:  
 
 ```bash
 	git clone https://github.com/<your_github_username>/udacity-devops-cicd.git
 ```
+
+![Clone the repo](./screenshots/cloudshell-repo-cloning.png)
 
 Then change directory to the repo:  
 
@@ -78,7 +80,7 @@ Then change directory to the repo:
 	cd udacity-devops-cicd
 ```
 
-From the repo, update the ``command.sh`` shell script with the web app name you want, then run the script to begin the deployment to your Azure account. When the deployment finished, you should see the URL of the deployed app from the output as shown:  
+From the repo, update the ``AZ_WEBAPP_NAME`` variable inside the ``command.sh`` shell script with the web app name you want, then run the script to begin the deployment to your Azure account. When the deployment finished, you should see the URL of the deployed app from the output as shown:  
 ![deployment output](./screenshots/azure-cloud-shell-deployment-finished.png)
 
 # Setting Up GitHub action to trigger Azure Pipeline on successful code linting workflow
